@@ -17,7 +17,16 @@ public class Driver {
 
     }
 
-    public static WebDriver getDriver() {
+    //how to run test in parallel ? INTERVIEW
+    //make your driver thread local
+    //make getDriver() method synchronized
+
+    /**
+     * synchronized makes method thread safe. It ensures that only thread can use it at the time.
+     * Thread safe reduces performance but
+     * @return
+     */
+    public synchronized static WebDriver getDriver() {
         //if webdriver object doesn't exist
         //create it
         if (driverPool.get() == null) {

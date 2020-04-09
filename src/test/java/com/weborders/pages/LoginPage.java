@@ -7,12 +7,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends AbstractBasePage {
 
-    @FindBy(id = "ctl00_MainContent_username")
+    @FindBy (id="ctl00_MainContent_username")
     private WebElement userName;
 
     @FindBy(id = "ctl00_MainContent_password")
     private WebElement password;
-
 
     public void login() {
         String usernameValue = ConfigurationReader.getProperty("username");
@@ -21,8 +20,10 @@ public class LoginPage extends AbstractBasePage {
         password.sendKeys(passwordValue, Keys.ENTER);
     }
 
+    //overloaded version
     public void login(String usernameValue, String passwordValue) {
         userName.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
     }
+
 }
